@@ -9,16 +9,17 @@ import json
 from google.cloud import texttospeech
 import psycopg2
 
+intents = discord.Intents.default()
+intents.message_content = True
+
 prefix = os.getenv('DISCORD_BOT_PREFIX', default='🦑')
 tts_lang = os.getenv('DISCORD_BOT_LANG', default='ja-JP')
 tts_voice = os.getenv('DISCORD_BOT_VOICE', default='ja-JP-Wavenet-B')
 token = os.environ['DISCORD_BOT_TOKEN']
-client = commands.Bot(command_prefix=prefix, intents=intents)
+client = commands.Bot(command_prefix=prefix,intents=intents)
 with open('emoji_ja.json', encoding='utf-8') as file:
     emoji_dataset = json.load(file)
 database_url = os.environ.get('DATABASE_URL')
-intents = discord.Intents.default()
-intents.message_content = True
 
 google_type = os.environ['GOOGLE_TYPE']
 google_project_id = os.environ['GOOGLE_PROJECT_ID']
