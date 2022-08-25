@@ -9,7 +9,7 @@ import json
 from google.cloud import texttospeech
 import psycopg2
 
-#intents = discord.Intents.default()
+intents = discord.Intents.default()
 #intents.message_content = True
 
 prefix = os.getenv('DISCORD_BOT_PREFIX', default='🦑')
