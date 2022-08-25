@@ -146,7 +146,7 @@ async def on_message(message):
                 text = message.content
 
                 # Add author's name
-                text = message.author.name + '、' + text
+                #text = message.author.name + '、' + text
 
                 # Replace dictionary
                 with psycopg2.connect(database_url) as conn:
@@ -297,7 +297,7 @@ def tts(filename, message):
         language_code=tts_lang, name=tts_voice
     )
     audio_config = texttospeech.AudioConfig(
-        audio_encoding=texttospeech.AudioEncoding.MP3, speaking_rate=1.2
+        audio_encoding=texttospeech.AudioEncoding.MP3, speaking_rate=1.1
     )
     response = tts_client.synthesize_speech(
         input=synthesis_input, voice=voice, audio_config=audio_config
