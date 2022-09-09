@@ -183,11 +183,11 @@ async def on_message(message):
                     text = re.sub(f'<@&{role_id}>', role_name, text)
 
                 # Replace Unicode emoji
-                text = re.sub(r'[\U0000FE00-\U0000FE0F]', '', text)
-                text = re.sub(r'[\U0001F3FB-\U0001F3FF]', '', text)
-                for char in text:
-                    if char in emoji.UNICODE_EMOJI['en'] and char in emoji_dataset:
-                        text = text.replace(char, emoji_dataset[char]['short_name'])
+                #text = re.sub(r'[\U0000FE00-\U0000FE0F]', '', text)
+                #text = re.sub(r'[\U0001F3FB-\U0001F3FF]', '', text)
+                #for char in text:
+                #    if char in emoji.UNICODE_EMOJI['en'] and char in emoji_dataset:
+                #        text = text.replace(char, emoji_dataset[char]['short_name'])
 
                 # Replace Discord emoji
                 pattern = r'<:([a-zA-Z0-9_]+):\d+>'
